@@ -1,11 +1,666 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SkillBadge from '../components/SkillBadge.astro';
+import NavHeader from '../components/NavHeader.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import TopNewspaper from '../assets/top-newspaper.svg';
+import BottomNewspaper from '../assets/bottom-newspaper.svg';
+
+import Books from '../assets/books.svg';
+import BrownTape from '../assets/brown-tape.svg';
+import YellowArrow from '../assets/yellow-arrow.svg';
+
+import FiveStar from '../assets/five-star.svg';
+import ElevenStar from '../assets/eleven-star.svg';
+import SamHero from '../assets/sam-hero.svg';
+
+import Ipod from '../assets/ipod.svg';
+import Vinyl from '../assets/vinyl.svg';
+
+import BrownArrow from '../assets/brown-arrow.svg';
+
+// List of three main experiences
+const experiences = [
+	{title: "UP Junior Finance Association - Member", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
+	{title: "UP Biomedical Engineering Circle - Marketing & Creatives Head", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
+	{title: "UP Engineering Freshie Council", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
+];
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout title = "greywolffles's cabin">
+
+	<!-- hero -->
+	<NavHeader/>
+
+	<section class = "hero-wrapper">
+		<TopNewspaper width = {600} height = {600} class = "top-newspaper"/>
+    	<div class = "hero-card">
+			<!-- intro -->
+			<div class = "hero-intro">
+				<h1 class = "hero-title">
+					hi, i'm <span class = "hero-name">sam!</span>
+				</h1>
+				<p class = "hero-text">
+					i'm a sophomore engineering student who often dabbles in data, design, and development projects. alongside my academic workload, i dedicate my time to learning new programming languages, designing fun products, or wrangling interesting datasets. when i'm not doing work, you can find me listening to <a href="https://open.spotify.com/show/5Pjt7qlcii0gLqvccowYhs?si=51e18d2d870e4730" class = "hero-link">horror podcasts</a>, playing <a href = "https://www.kakuroconquest.com/" class = "hero-link">kakuro</a>, or eating gyudon.
+				</p>
+			</div>
+			
+			<!-- guestbook area -->
+			<Books width = {300} height = {300} class = "books"/>
+			<YellowArrow width = {150} height = {150} class = "yellow-arrow"/>
+			<div class = "hero-guestbook">
+				<p class = "guestbook-text">drop a message!</p>
+				<BrownTape width = {300} height = {300} class = "brown-tape"/>
+			</div>
+
+			<!-- pics -->
+			<div class = "hero-layer-wrapper">
+				<FiveStar width = {100} height = {100} class = "five-star"/>
+				<ElevenStar width = {350} height = {350} class = "eleven-star"/>
+				<SamHero width = {350} height = {350} class = "hero-portrait"/>
+			</div>
+		</div>
+
+		<Ipod width = {350} height = {350} class = "ipod"/>
+		<Vinyl width = {300} height = {300} class = "vinyl"/>
+
+		<div class = "learn">
+			<BrownArrow width = {150} height = {150} class = "brown-arrow"/>
+			<h1 class = "learn-text">i learn . . .</h1>
+		</div>
+		<BottomNewspaper width = {600} height = {600} class = "bottom-newspaper"></BottomNewspaper>
+    </section>
+	
+	<!-- skills -->
+	<section class = "skills">
+
+		<!-- data -->
+		<div class = "data-sections aligment-left">
+			<div class = "skills-grid">
+				<div class = "badge-row">
+					<SkillBadge name = "python" variant = "orange"/>
+          			<SkillBadge name = "SQL" variant = "orange"/>
+          			<SkillBadge name = "R" variant = "orange"/>
+				</div>
+				<div class = "skill-type">
+					<h2 class = "skill-title">data!</h2>
+					<h4 class = "skill-subtitle">[subject] of interest.</h4>
+				</div>
+			</div>
+			<p class = "skill-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</div>
+
+		<svg class = "diagonal-divider" viewBox = "0 0 100 100" preserveAspectRatio = "none">
+		<polygon fill = "var(--color-orange)" points = "0, 0 100, 0 0, 100"></polygon>
+		<polygon fill = "var(--color-brown)" points = "0, 100 100, 0 100, 100"></polygon>
+		</svg>
+
+		<!-- design -->
+		<div class = "design-sections aligment-right">
+			<div class = "skills-grid">
+				<div class = "badge-row">
+					<SkillBadge name = "fusion360" variant = "brown"/>
+          			<SkillBadge name = "blender" variant = "brown"/>
+				</div>
+				<div class = "skill-type">
+					<h2 class = "skill-title">design!</h2>
+					<h4 class = "skill-subtitle">home base.</h4>
+				</div>
+			</div>
+			<p class = "skill-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</div>
+
+		<svg class = "diagonal-divider" viewBox = "0 0 100 100" preserveAspectRatio = "none">
+		<polygon fill = "var(--color-brown)" points = "0, 0 100, 0 100, 100"></polygon>
+		<polygon fill = "var(--color-green)" points ="0, 0 100, 100 0, 100"></polygon>
+		</svg>
+
+		<!-- dev -->
+		<div class = "dev-sections aligment-left">
+			<div class = "skills-grid">
+				<div class = "badge-row">
+					<SkillBadge name = "HTML" variant = "green"/>
+          			<SkillBadge name = "CSS" variant = "green"/>
+					<SkillBadge name = "javascript" variant = "green"/>
+				</div>
+				<div class = "skill-type">
+					<h2 class = "skill-title">dev!</h2>
+					<h4 class = "skill-subtitle">bucket list.</h4>
+				</div>
+			</div>
+			<p class = "skill-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</div>
+	</section>
+
+	<!-- exp, educ, and tinker -->
+	<section class = "exp">
+		<div class = "exp-grid">
+
+
+			<!-- exp -->
+			<div class = "card card-experience">
+				<h3 class = "column-title">experience</h3>
+				<div class = "timeline">
+					{experiences.map((exp) => (
+						<div class = "timeline-item">
+							<div class = "timeline-dot"></div>
+							<h4 class = "timeline-header">{exp.title}</h4>
+							<p class = "timeline-body">{exp.text}</p>
+						</div>
+					))}
+				</div>
+			</div>
+
+				<!-- tinker -->
+			<div class = "card card-education">
+				<h3 class = "column-title">education</h3>
+				<div class = "educ-list">
+					<div class = "educ-item">
+						<div class="educ-icon">🌻</div> 
+						<p class = "educ-school">university of the philippines - diliman</p>
+						<p class = "educ-degree">BS mechanical engineering</p>
+					</div>
+					<div class = "educ-item">
+						<div class="educ-icon">🔥</div>
+						<p class = "educ-school">philippines science high school - main campus</p>
+						<p class = "educ-degree">physics core + engineering and tech electives</p>
+					</div> 
+				</div>
+			</div>
+			<div class = "card card-tinkers">
+				<h3 class = "column-title">tinkers-to-do</h3>
+				<div class = "tinker-grid">
+					<div class = "tinker-box">
+						<p>Lorem ipsum dolor sit amet</p>
+					</div>
+					<div class = "tinker-box">
+						<p>Lorem ipsum dolor sit amet</p>
+					</div>
+					<div class = "tinker-box">
+						<p>Lorem ipsum dolor sit amet</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	:global(html),
+	:global(body) {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		min-height: 100vh;
+		max-width: 100vw;
+		overflow-x: hidden;
+		background-color: var(--color-cream);
+	}
+
+	/* ======================================== hero ======================================== */
+
+	.top-newspaper {
+		position: absolute;
+		top: -10px;
+		right: -60px;
+		z-index: 1;
+		pointer-events: none;
+  	}
+
+	.bottom-newspaper {
+		position: absolute;
+		bottom: 0;
+		left: -100px;
+		z-index: 1;
+  	}
+
+
+	.hero-wrapper {
+		background-color: var(--color-cream);
+		padding: 5rem 2rem 12.5rem 2rem;
+		display: flex;
+		justify-content: left;
+		align-items: start;
+		overflow: hidden;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between; 
+		min-height: calc(100vh - 60px); 
+	}
+
+	.hero-card {
+		background-color: var(--color-green);
+		display: grid;
+		grid-template-columns: 1.2fr 1fr; 
+		gap: 2rem;
+		width: 70%;
+		height: 350px;
+		padding: 20px;
+		position: relative; 
+		z-index: 5;
+	}
+
+	.hero-title {
+		color: var(--color-cream);
+		font-size: clamp(2.5rem, 6vw, 4.5rem);
+		line-height: 1.1;
+	}
+
+	.hero-name {
+		color: var(--color-orange);
+		font-size: clamp(2.5rem, 6vw, 4.5rem);
+		line-height: 1.1;
+	}
+
+	.hero-text {
+		color: var(--color-cream);
+		font-size: 1.25rem;
+		font-size: clamp(1rem, 2vw, 1.25rem);
+	}
+
+	.hero-link {
+		color: var(--color-cream);
+	}
+
+	.hero-guestbook {
+		color: var(--color-yellow);
+	}
+
+	.hero-layer-wrapper {
+		position: relative;
+		width: 100%;
+		height: auto;
+		z-index: 100;
+		min-height: 100px;
+	}
+
+	.hero-portrait {
+		position: absolute;
+		right: -130%; 
+		bottom: 10px;
+		z-index: 100;
+		transition: transform 0.5s ease-in-out; 
+		max-width: 100%;
+	}
+
+	.hero-portrait:hover {
+		transform: rotate(10deg);
+	}
+
+	.five-star {
+		position: absolute;
+		top: -450%;
+		right: -70%;
+		z-index: 10;
+		pointer-events: none;
+		transition: transform 1.0s ease-in-out; 
+		max-width: 100%;
+	}
+
+	.five-star:hover {
+		transform: rotate(-50deg);
+	}
+
+	.eleven-star {
+		position: absolute;
+		right: -120%; 
+		bottom: 120px;
+		z-index: 11;
+		transition: transform 1.0s ease-in-out; 
+		max-width: 100%;
+	}
+
+	.eleven-star:hover {
+		transform: rotate(40deg);
+	}
+
+	.books {
+		position: absolute;
+		left: 2%;
+		bottom: -250px;
+		max-width: 30%;
+		transform: rotate(-15deg);
+		transition: transform 0.5s ease-in-out; 
+	}
+
+	.yellow-arrow {
+		position: absolute;
+		left: 25%;
+		bottom: -80px;
+		max-width: 15%;
+		transform: rotate(-15deg);
+		transition: transform 0.5s ease-in-out; 
+	}
+
+	.yellow-arrow:hover {
+		transform: rotate(-45deg);
+	}
+
+	.hero-guestbook {
+ 		position: relative;
+  		bottom: -150px;
+		left: -250px;
+		transform: rotate(-15deg);
+		transition: transform 0.5s ease-in-out; 
+	}
+
+	.hero-guestbook:hover {
+		transform: rotate(15deg);
+	}
+
+
+	.brown-tape {
+  		display: block;
+  		width: 100%;
+ 		height: auto;
+	}
+
+	.guestbook-text {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: var(--color-cream);
+		font-size: clamp(0.75rem, 1.5vw, 1rem);
+		text-align: center;
+		width: 90%;
+	}
+
+	.ipod {
+		position: absolute;
+		top: 20px;
+		right: 5%;
+		z-index: 50;
+		max-width: 20%;
+	}
+
+	@keyframes spin {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(360deg);
+		}
+	}
+
+	.vinyl {
+		position: absolute;
+		top: -20px;
+		right: 7.5%;
+		z-index: 50;
+		max-width: 15%;
+		animation: spin 4s linear infinite;
+	}
+
+	.learn {
+		position: absolute;
+		bottom: 20px;
+		right: 20px;
+	}
+
+	.brown-arrow {
+		position: relative;
+		bottom: -75px;
+		right: 200px;
+	}
+
+	.learn-text {
+		position: relative;
+		bottom: 50px;
+		right: 50px;
+		color: var(--color-brown);
+		font-size: 2.50rem;
+	}
+
+	@media (min-width: 768px) {
+    .hero-wrapper {
+        padding: 5rem 2rem 12.5rem 2rem;
+        align-items: flex-start;
+    }
+    
+    .hero-card {
+        grid-template-columns: 1.2fr 1fr; /* Restores side-by-side grid split */
+        width: 70%;
+    }
+
+	/* ======================================== skills ======================================== */
+
+	.skills {
+		width: 100%;
+		min-height: 100vh;
+		background-color: var(--color-brown); 
+		display: flex;
+		flex-direction: column; 
+		width: 100%;
+		overflow-x: hidden;
+	}
+
+	.data-sections {
+		background-color: var(--color-orange);
+		text-align: right; 
+	}
+
+	.design-sections {
+		background-color: var(--color-brown);
+		text-align: left; 
+	}
+
+	.dev-sections {
+		background-color: var(--color-green);
+		text-align: right; 
+	}
+
+	.data-sections, .design-sections, .dev-sections {
+		flex: 1;
+  		display: flex;
+  		flex-direction: column;
+  		justify-content: center;
+  		padding: 2rem;
+  		box-sizing: border-box;
+	}
+
+	.skills-grid {
+		display: flex;
+		flex-direction: row; 
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		margin-bottom: 1.5rem;
+	}
+
+	.design-sections .skills-grid {
+		flex-direction: row-reverse !important;
+	}
+
+	.skill-title {
+		font-size: 2.50rem;
+	}
+
+	.skill-subtitle {
+		font-size: 1.00rem;
+	}
+
+	.skill-desc {
+		width: 100%;
+  		margin: 0;
+		color: var(--color-cream)
+	}
+
+	.data-sections .skill-title, .data-sections .skill-subtitle {
+		color: var(--color-brown);
+	}
+
+	.design-sections .skill-title, .design-sections .skill-subtitle {
+		color: var(--color-cream);
+	}
+
+	.dev-sections .skill-title, .dev-sections .skill-subtitle {
+		color: var(--color-yellow);
+	}
+
+	.diagonal-divider {
+		display: block;
+		overflow: hidden;
+		width: 100%;
+		height: 60px;
+		margin-top: -2px;
+  		margin-bottom: -2px;
+		padding: 0;
+		transform: scaleX(-1.05);
+		shape-rendering: geometricPrecision;
+	}
+
+	/* ======================================== exp ======================================== */
+
+	.exp {
+		background-color: var(--color-orange);
+		min-height: 100vh;
+		padding: 2rem;
+		box-sizing: border-box;
+	}
+
+	.exp-grid {
+		max-width: 1024px;
+		margin: 0;
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+	}
+
+
+	@media (min-width: 768px) {
+	.exp-grid {
+		grid-template-columns: 1.4fr 1fr; 
+	}
+
+	.card-tinkers {
+		grid-column: 1 / -1;
+	}
+	}
+
+
+	.card {
+		background-color: var(--color-brown);
+		padding: 2.5rem;
+		box-sizing: border-box;
+	}
+
+	.column-title {
+		color: var(--color-orange);
+		font-family: serif;
+		font-size: 2.5rem;
+		font-weight: 700;
+		margin: 0 0 2rem 0;
+	}
+
+	.timeline {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.timeline-item {
+		display: flex;
+		gap: 1.5rem;
+		position: relative;
+	}
+
+	.timeline-item::after {
+		content: '';
+		position: absolute;
+		left: 6px;
+		top: 16px;
+		bottom: -20px;
+		width: 2px;
+		background-color: var(--color-green);
+	}
+
+	.timeline-item:last-child::after {
+		display: none;
+	}
+
+	.timeline-dot {
+	width: 14px;
+	height: 14px;
+	background-color: var(--color-green);
+	border-radius: 2px;
+	flex-shrink: 0;
+	margin-top: 4px;
+	z-index: 2;
+	}
+
+	.timeline-header {
+	color: #fffdfa;
+	font-weight: 700;
+	font-size: 1rem;
+	margin: 0 0 0.25rem 0;
+	}
+
+	.timeline-body {
+	color: rgba(255, 253, 250, 0.8);
+	font-size: 0.85rem;
+	line-height: 1.5;
+	margin: 0;
+	}
+
+	.educ-list {
+	display: flex;
+	flex-direction: column;
+	gap: 2.5rem;
+	}
+
+	.educ-item {
+	display: flex;
+	gap: 1.5rem;
+	align-items: flex-start;
+	}
+
+	.educ-icon {
+		font-variant-emoji: text;
+		color: var(--color-yellow);
+		font-size: 2rem;
+		line-height: 1;
+	}
+
+	.educ-school {
+		color: var(--color-cream);
+		font-weight: 700;
+		font-size: 0.95rem;
+		margin: 0 0 0.25rem 0;
+	}
+
+	.educ-degree {
+		color: var(--color-cream);
+		font-size: 0.85rem;
+		margin: 0;
+	}
+
+	.tinker-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+
+	@media (min-width: 640px) {
+	.tinker-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	}
+
+	.tinker-box {
+	background-color: var(--color-green);
+	padding: 1rem 1.25rem;
+	border-radius: 2px;
+	display: flex;
+	align-items: center;
+	}
+
+	.tinker-box p {
+	color: var(--color-cream);
+	font-size: 0.85rem;
+	line-height: 1.4;
+	margin: 0;
+	}
+
+</style>	

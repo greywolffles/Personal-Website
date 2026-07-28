@@ -1,0 +1,47 @@
+---
+interface Props {
+  name: string;
+  variant: 'brown' | 'orange' | 'green';
+}
+
+const {name, variant} = Astro.props;
+---
+
+<span class = {`skill-badge variant-${variant}`}>
+  	{name}
+</span>
+
+<style>
+  	:root {
+		--color-brown: #4c3019;
+		--color-orange: #e56c20;
+		--color-yellow: #ec9507;
+		--color-green: #4d6e36;
+		--color-cream: #efe8e2;
+	}
+
+	.skill-badge {
+		border-radius: 5px;
+		font-size: 1.25rem;
+		padding: 10px;
+		margin: 10px;
+		font-family: 'Helvetica Now Condensed', Arial, sans-serif;
+		font-stretch: 75%;
+  	}
+
+  	.variant-orange {
+    	background-color: var(--color-brown);
+		color: var(--color-cream);
+  	}
+
+
+  	.variant-brown {
+    	background-color: var(--color-cream);
+		color: var(--color-brown);
+  	}
+
+  	.variant-green {
+    	background-color: var(--color-yellow);
+		color: var(--color-green);
+  	}
+</style>

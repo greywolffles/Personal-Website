@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+	<header class = "nav-header">
+		<div class = "brand-side">
+			<a href = "/" class = "logo-text">greywolffles</a>
+		</div>
+
+		<nav class = "nav-side">
+			<ul class = "nav-links">
+			<li class = "active-link">
+				<a href = "/projects">
+				projects
+				</a>
+			</li>
+			<li><a href = "/blog">blog</a></li>
+			<li><a href = "/creatives">creatives</a></li>
+			<li><a href = "/contacts">contacts</a></li>
+			</ul>
+		</nav>
+	</header>
+</BaseLayout>
+
+<style>
+  .nav-header {
+    display: flex;
+    width: 100%;
+    height: 70px;
+	z-index: 20;
+  }
+
+  .brand-side {
+    background-color: var(--color-brown);
+    flex: 1.2;
+    display: flex;
+    align-items: center;
+    padding-left: 2.5rem;
+  }
+
+  .logo-text {
+    color: #ebe6df;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+  }
+
+  .nav-side {
+    background-color: var(--color-orange);
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links a {
+    color: var(--color-cream);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .nav-links a:hover {
+    opacity: 0.8;
+  }
+</style>
