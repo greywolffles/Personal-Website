@@ -21,27 +21,50 @@ const {name, variant} = Astro.props;
 	}
 
 	.skill-badge {
+		display: inline-block;
 		border-radius: 5px;
 		font-size: 1.25rem;
 		padding: 10px;
 		margin: 10px;
 		font-family: 'Helvetica Now Condensed', Arial, sans-serif;
 		font-stretch: 75%;
+		transition: transform 0.5s ease-in-out;
+  	}
+
+	.skill-badge:hover {
+		transform: scale(1.1); 
   	}
 
   	.variant-orange {
     	background-color: var(--color-brown);
 		color: var(--color-cream);
+		transition: 0.5s ease-in-out;
   	}
 
+	.variant-orange:hover {
+    	background-color: var(--color-cream);
+		color: var(--color-brown);
+  	}
 
   	.variant-brown {
     	background-color: var(--color-cream);
+		color: var(--color-brown);
+		transition: 0.5s ease-in-out;
+  	}
+
+	.variant-brown:hover {
+    	background-color: var(--color-orange);
 		color: var(--color-brown);
   	}
 
   	.variant-green {
     	background-color: var(--color-yellow);
 		color: var(--color-green);
+		transition: 0.5s ease-in-out;
+  	}
+
+	.variant-green:hover {
+    	background-color: var(--color-brown);
+		color: var(--color-yellow);
   	}
 </style>
