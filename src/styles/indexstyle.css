@@ -44,6 +44,7 @@
 	bottom: 0;
 	left: -100px;
 	z-index: 1;
+	opacity: 0.9;
 }
 
 .hero-wrapper {
@@ -62,12 +63,11 @@
 	background-color: var(--color-green);
 	display: grid;
 	grid-template-columns: 1.2fr 1fr;
-	width: 70%;
+	width: min(100%, 80rem);
 	min-height: 350px; 
 	height: auto; 
 	position: relative;
 	z-index: 5;
-	max-width: 72rem;
 	gap: var(--gap, 2rem);
 	padding: var(--card-padding, 20px);
 	box-sizing: border-box;
@@ -78,10 +78,13 @@
 		grid-template-columns: 1fr;
 		width: 100%;
 		min-height: unset;
+		gap: 3rem;
 	}
 }
 
 .hero-intro {
+	grid-column: 1;
+	grid-row: 1;
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
@@ -110,43 +113,51 @@
 }
 
 .hero-guestbook {
+	grid-column: 1;
+	grid-row: 2;
 	position: relative;
-	transform: rotate(-15deg);
+	z-index: 15;
+	margin-top: 2rem;
+	width: fit-content;
+	max-width: 100%;
+	
+	/* CHANGE 1: Automatically distribute margins to center the element horizontally */
+	margin-left: auto;
+	margin-right: auto;
+	
+	/* CHANGE 2: Establish a clean initial 3D transform baseline */
+	transform: rotate(-5deg);
 	transition: transform 0.5s ease-in-out;
-	color: var(--color-yellow);
-	transform:
-		translate(-35%, 40%)
-		rotate(-15deg);
 }
 
 .hero-guestbook:hover {
-	transform: 
-		translate(-35%, 40%)
-		rotate(15deg);
+	transform: rotate(5deg);
 }
 
 .hero-layer-wrapper {
-	min-height: 100px;
-	display:flex;
-	justify-content: center;
+	min-height: 300px;
+	display: flex;
+	justify-content: flex-end; 
 	align-items: center;
 	position: relative;
+	width: 100%;
+	height: 100%;
 }
 
 .hero-portrait {
 	position: absolute;
-	right: -130%;
-	bottom: 10px;
+	top: 50%;
+	right: 0;
+	transform: translate(0, -50%); 
 	z-index: 100;
 	transition: transform 0.5s ease-in-out;
-	max-width: 100%;
 	width: 100%;
-	max-width: var(--hero-image);
+	max-width: var(--hero-image, 250px);
 	height: auto;
 }
 
 .hero-portrait:hover {
-	transform: rotate(10deg);
+	transform: translate(50%, -50%) rotate(10deg);
 }
 
 .hero-wrapper,
@@ -162,12 +173,13 @@
 
 .five-star {
 	position: absolute;
-	top: -450%;
-	right: -70%;
+	top: 10%;
+	right: 220px; 
 	z-index: 10;
 	pointer-events: none;
 	transition: transform 1s ease-in-out;
-	max-width: 100%;
+	width: 50px;
+	height: auto;
 }
 
 .five-star:hover {
@@ -176,35 +188,39 @@
 
 .eleven-star {
 	position: absolute;
-	right: -120%;
-	bottom: 120px;
-	z-index: 11;
+	top: 50%;
+	right: 0;
+	transform: translate(20px, -50%);
+	z-index: 11; 
 	transition: transform 1s ease-in-out;
-	max-width: 100%;
+	width: 320px; 
+	max-width: 130%; 
+	height: auto;
 }
 
 .eleven-star:hover {
-	transform: rotate(40deg);
+	transform: translate(-50%, -50%) rotate(40deg);
 }
 
 .books {
 	position: absolute;
-	left: 2%;
-	bottom: -250px;
-	max-width: 30%;
-	transition: transform 0.5s ease-in-out;
-	width: min(25vw, 18rem);
+	left: -100px;
+	bottom: -50px;
+	z-index: 12;
+	width: 200px;
 	height: auto;
+	transition: transform 0.5s ease-in-out;
 }
 
 .yellow-arrow {
 	position: absolute;
-	left: 25%;
-	max-width: 15%;
+	left: -10px;
+	bottom: 100px;
+	z-index: 13;
+	width: 100px;
+	height: auto;
 	transform: rotate(-15deg);
 	transition: transform 0.5s ease-in-out;
-	bottom: -20%;
-	transform: rotate(-15deg);
 }
 
 .yellow-arrow:hover {
@@ -262,6 +278,7 @@
 	position: absolute;
 	bottom: 20px;
 	right: 20px;
+	z-index: 100;
 }
 
 .brown-arrow {
@@ -276,6 +293,61 @@
 	right: 50px;
 	color: var(--color-brown);
 	font-size: var(--fs-xl);
+}
+
+@media screen and (max-width: 768px) {
+	.hero-card {
+		/* Collapse grid into a single top-to-bottom layout stream */
+		grid-template-columns: 1fr;
+		gap: 2.5rem;
+	}
+
+	/* Force clean natural stack placement order on mobile screen viewports */
+	.hero-intro {
+		grid-column: 1;
+		grid-row: 1; /* 1st: Text content */
+	}
+
+	.hero-guestbook {
+		grid-column: 1;
+		grid-row: 2; /* 2nd: Guestbook button */
+		margin: 1rem auto 0 auto; /* Center the guestbook button horizontally on mobile */
+	}
+
+	.hero-layer-wrapper {
+		grid-column: 1;
+		grid-row: 3; /* 3rd: Portrait and star assets */
+		min-height: 320px; /* Gives images plenty of canvas room so they don't clip */
+		justify-content: center; /* Centers portrait frame on mobile screens */
+	}
+	
+	/* Reset positioning origins so components stay perfectly grouped when centered */
+	.hero-portrait,
+	.eleven-star {
+		right: auto;
+		left: 50%;
+	}
+	
+	.hero-portrait {
+		transform: translate(-50%, -50%);
+	}
+	
+	.hero-portrait:hover {
+		transform: translate(-50%, -50%) rotate(10deg);
+	}
+	
+	.eleven-star {
+		transform: translate(-50%, -50%);
+	}
+	
+	.eleven-star:hover {
+		transform: translate(-50%, -50%) rotate(40deg);
+	}
+	
+	.five-star {
+		right: auto;
+		left: 15%;
+	}
 }
 
 /* ======================================== skills ======================================== */
