@@ -62,15 +62,23 @@
 	background-color: var(--color-green);
 	display: grid;
 	grid-template-columns: 1.2fr 1fr;
-	gap: 2rem;
 	width: 70%;
-	height: 350px;
-	padding: 20px;
+	min-height: 350px; 
+	height: auto; 
 	position: relative;
 	z-index: 5;
 	max-width: 72rem;
-	gap: var(--gap);
-	padding: var(--card-padding);
+	gap: var(--gap, 2rem);
+	padding: var(--card-padding, 20px);
+	box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+	.hero-card {
+		grid-template-columns: 1fr;
+		width: 100%;
+		min-height: unset;
+	}
 }
 
 .hero-intro {
@@ -388,6 +396,7 @@
 
 .card-tinkers {
 	grid-column: 1 / -1;
+	z-index: 500;
 }
 
 .column-title {
