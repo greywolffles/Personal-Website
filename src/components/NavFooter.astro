@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<footer class="nav-footer">
+	<div class="footer-container">
+			<div class="footer-credits">
+			<p class="built-with">Built with Astro</p>
+			<p class="copyright">&copy; 2026 Samantha Nicole Gianan</p>
+		</div>
+
+		<nav class="footer-nav">
+			<a href="/projects" class="footer-link">projects</a>
+			<a href="/blog" class="footer-link">blog</a>
+			<a href="/creatives" class="footer-link">creatives</a>
+			<a href="/contacts" class="footer-link">contacts</a>
+		</nav>
+
+	</div>
+</footer>
+
+<style>
+  .nav-footer {
+	z-index: 200;
+    background-color: var(--color-brown);
+    width: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+  }
+
+  .footer-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .footer-container {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  .footer-credits {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .built-with, .copyright {
+    color: var(--color-cream);
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin: 0;
+  }
+
+  .footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .footer-link {
+    color: var(--color-cream);
+    font-family: serif;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .footer-link:hover {
+    color: var(--color-orange);
+  }
+</style>

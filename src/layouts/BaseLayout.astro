@@ -4,18 +4,21 @@ interface Props {
 }
 
 const { title = "greywolffles's cabin" } = Astro.props;
+
+import faviconImage from '../assets/vinyl.svg';
 ---
 
 <!DOCTYPE html>
 <html lang = "en">
   	<head>
+		<link rel = "icon" type = "image/svg+xml" href = {faviconImage.src} />
 		<link rel = "preconnect" href = "https://googleapis.com">
   		<link rel = "preconnect" href = "https://gstatic.com" crossorigin>
 		<link href = "https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
   		<link href = "https://googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 		<meta charset = "UTF-8" />
 		<meta name = "viewport" content = "width=device-width, initial-scale=1.0" />
-		<title>{title}</title>
+		<title>greywolffles's cabin</title>
 		<style is:global>
 		* {
 			margin: 0;
