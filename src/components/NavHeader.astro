@@ -45,6 +45,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		font-weight: bold;
 		text-decoration: none;
 		letter-spacing: -0.5px;
+		transition: 0.2s ease;
+	}
+
+	.logo-text:hover {
+		color: var(--color-orange);
 	}
 
 	.nav-side {
@@ -59,21 +64,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		text-decoration: none;
 		font-size: 1.1rem;
 		font-weight: 500;
+		font-family: 'Karla', sans-serif;
 		height: 100%;
 		display: flex;
 		align-items: center;
 		padding: 0 1.5rem;
-		transition: opacity 0.2s ease;
+		transition: 0.2s ease;
     }
 
 	.nav-tab:hover {
-    	opacity: 0.8;
+    	color: var(--color-yellow);
   	}
 
 	.proj-link {
 		background-color: var(--color-orange);
     	padding: 0 2rem;
 		margin-left: auto;
+		transition: 0.2s ease;
+	}
+
+	.proj-link:hover {
+		background-color: var(--color-green);
 	}
 
 	.gear-icon {
@@ -81,6 +92,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		height: 1.8rem;
 		color: var(--color-cream);
 		margin-right: 0.6rem;
+		transition: 0.2s ease;
+	}
+
+	.gear-icon:hover {
+		color: var(--color-yellow);
 	}
 
 	@media screen and (max-width: 768px) {

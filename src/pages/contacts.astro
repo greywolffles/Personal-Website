@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavHeader from '../components/NavHeader.astro';
+import NavFooter from '../components/NavFooter.astro';
+---
+
+<BaseLayout title = "greywolffles's outpost">
+	<NavHeader/>
+	<div class = "construct">
+		<p>under construction... :]</p>
+	</div>
+	<NavFooter/>
+</BaseLayout>
+
+<style>
+	html, body {
+		background-color: var(--color-brown);
+	}
+
+	.construct {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 70vh; 
+	}
+
+	p {
+		color: var(--color-orange);
+		font-size: 3.00rem;
+	}
+</style>
