@@ -91,6 +91,7 @@
 	color: var(--color-orange);
 	font-size: clamp(2.5rem, 6vw, 4.5rem);
 	line-height: 1.1;
+	transition: 0.5s ease;
 }
 
 .hero-text {
@@ -394,11 +395,11 @@
 }
 
 .skill-title {
-	font-size: var(--fs-lg);
+	font-size: var(--fs-xl);
 }
 
 .skill-subtitle {
-	font-size: 1rem;
+	font-size: var(--fs-lg);
 }
 
 .skill-desc {
@@ -467,6 +468,7 @@
 	color: var(--color-orange);
 	font-family: serif;
 	font-size: clamp(1rem, 3vw, 2rem);
+	font-size: var(--fs-xl);
 	font-weight: 700;
 	margin: 0 0 2rem 0;
 }
@@ -621,12 +623,15 @@
 	gap: 1.5rem;
 }
 
+.icon-github, .icon-linkedin {
+	font-size: 0.75rem;
+}
+
 .icon-link {
 	background-color: var(--color-brown);
 	color: var(--color-orange);
 	inline-size: 3rem;
 	block-size: 3rem;
-	font-size: 1.25rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
