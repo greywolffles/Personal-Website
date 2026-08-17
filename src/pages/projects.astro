@@ -1,31 +1,31 @@
 ---
+import '../styles/projectsstyle.css';
 import BaseLayout from '../layouts/BaseLayout.astro';
+
 import NavHeader from '../components/NavHeader.astro';
 import NavFooter from '../components/NavFooter.astro';
 ---
 
 <BaseLayout title = "greywolffles's workshop">
 	<NavHeader/>
-	<div class = "construct">
-		<p>under construction... :]</p>
-	</div>
+	<section class = "hero-wrapper">
+		<h1>Projects</h1>
+		<div class = "spollight-grid">
+			<div class = "card card-primary">
+				<h3 class = "column-title">Energy, Economics, and Everyone</h3>
+				<p class = "column-desc">A data science project that explores the complex and paradoxical relationship of energy consumption, electricity access, and economic wealth.</p>
+				<h3 class = "column-link"><a href="https://github.com/greywolffles/Sustainable-Energy-for-All-Data">View more...</a></h3>
+			</div>
+			<div class = "card card-secondary">
+				<h3 class = "column-title">Transactions and [Decision] Trees</h3>
+				<p class = "column-desc">What makes decision trees good (and terrible) for machine learning model? A sandbox project testing out XGBoost for time-series vs. classification models.</p>
+				<h3 class = "column-link"><a href="https://github.com/greywolffles/Credit-Card-Financial-Transactions-Data">View more...</a></h3>
+			</div>
+			<div class = "card card-tertiary">
+				<h3 class = "column-title">???</h3>
+				<h3 class = "column-link">More to come...</h3>
+			</div>
+		</div>
+	</section>
 	<NavFooter/>
 </BaseLayout>
-
-<style>
-	html, body {
-		background-color: var(--color-brown);
-	}
-
-	.construct {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		min-height: 70vh; 
-	}
-
-	p {
-		color: var(--color-orange);
-		font-size: 3.00rem;
-	}
-</style>

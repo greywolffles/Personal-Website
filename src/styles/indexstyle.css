@@ -1,18 +1,18 @@
 :root {
-	/* Layout */
+	/* layout */
 	--container: min(90%, 80rem);
 	--section-space: clamp(3rem, 6vw, 8rem);
 	--card-padding: clamp(1rem, 2vw, 2rem);
 	--gap: clamp(1rem, 2vw, 2rem);
 
-	/* Typography */
+	/* typography */
 	--fs-xs: clamp(.65rem, .70rem + .25vw, .75rem);
 	--fs-sm: clamp(.95rem, .85rem + .35vw, 1.1rem);
 	--fs-base: clamp(1rem, .95rem + .4vw, 1.25rem);
 	--fs-lg: clamp(1.4rem, 1rem + 1vw, 2rem);
 	--fs-xl: clamp(2rem, 1.5rem + 3vw, 4rem);
 
-	/* Images */
+	/* images */
 	--hero-image: clamp(14rem, 28vw, 24rem);
 	--decor-small: clamp(3rem, 8vw, 6rem);
 	--decor-large: clamp(10rem, 20vw, 22rem);
@@ -92,7 +92,7 @@
 	color: var(--color-orange);
 	font-size: clamp(2.5rem, 6vw, 4.5rem);
 	line-height: 1.1;
-	transition: 0.5s ease;
+	transition: 0.5s ease-in-out;
 }
 
 .hero-text {
@@ -613,12 +613,11 @@
 .contacts-title {
 	color: var(--color-green);
 	font-family: serif;
-	font-size: 1.75rem;
+	font-size: 2.75rem;
 	font-weight: 700;
 	writing-mode: vertical-rl;
 	text-orientation: upright;
 	letter-spacing: -2px;
-	text-transform: lowercase;
 }
 
 .contact-icons {
@@ -628,7 +627,7 @@
 }
 
 .icon-github, .icon-linkedin {
-	font-size: 0.75rem;
+	font-size: 0.65rem;
 }
 
 .icon-link {
