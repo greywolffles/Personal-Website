@@ -2,30 +2,46 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import NavHeader from '../components/NavHeader.astro';
 import NavFooter from '../components/NavFooter.astro';
+import { getCollection } from 'astro:content';
+
+import '../styles/blogsstyle.css';
+
+const allPosts = await getCollection('blog');
+
+const sortedPosts = allPosts.sort(
+  (a: any, b: any) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
+);
 ---
 
-<BaseLayout title = "greywolffles's journal">
-	<NavHeader/>
-	<div class = "construct">
-		<p>under construction... :]</p>
-	</div>
-	<NavFooter/>
+<BaseLayout title = "greywolffles's globe">
+  <NavHeader />
+
+  <div class = "blog-wrapper">
+    <header class = "blog-hero">
+      <h1>Blog</h1>
+      <p>
+        I'm not in journalism anymore but I still want to write, so welcome to <br />
+        <strong>Article Writing II: Electric Boogaloo!</strong>
+      </p>
+    </header>
+
+    <main class = "posts-stack">
+      {sortedPosts.map((post: any) => (
+        <a href = {`/blog/${post.id}`} class = "blog-card-link">
+          <article class = "blog-card">
+            <h2>{post.data.title}</h2>
+            <p class="post-date">
+			Published on {new Date(post.data.pubDate).toLocaleDateString('en-US', {
+				year: 'numeric',
+				month: 'long',
+				day: 'numeric'
+			})}
+			</p>
+          </article>
+        </a>
+      ))}
+    </main>
+  </div>
+
+  <NavFooter />
 </BaseLayout>
-
-<style>
-	html, body {
-		background-color: var(--color-brown);
-	}
-
-	.construct {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		min-height: 70vh; 
-	}
-
-	p {
-		color: var(--color-orange);
-		font-size: 3.00rem;
-	}
-</style>
