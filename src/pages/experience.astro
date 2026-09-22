@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavHeader from '../components/NavHeader.astro';
+import NavFooter from '../components/NavFooter.astro';
+
+import '../styles/experiencesstyle.css';
+
+const dataAndDev = [
+  {
+    role: "Bioinformatics Head + Marketing and Creatives Director",
+    organization: "UP Biomedical Engineering Circle",
+    timeline: "Sep 2025 - Present",
+    bullets: [
+      "Spearheaded the development of UP BMEC's GitHub for bioinformatics and data science projects",
+      "Developed research guides and activities for introductory data science",
+      "Founded the UP Biomedical Engineering Circle as a founding executive committee member"
+    ]
+  },
+  {
+    role: "President",
+    organization: "PSHS-MC Computron (Computer Science Club)",
+    timeline: "Sep 2022 - May 2025",
+    bullets: [
+      "Managed campus-wide events to foster computer science appreciation",
+      "Led the club along with core officers to plan activities, handle funds, and coordinate with external organizations",
+      "Spearheaded and hosted discussions and activities for club members"
+    ]
+  },
+  {
+    role: "Communications Head",
+    organization: "PSHS-MC Reboot (Computer Science Training Pool)",
+    timeline: "Aug 2023 - May 2025",
+    bullets: [
+      "Wrote modules and exercises to teach members’ about skills in software development",
+      "Spearheaded internals and externals projects for a training pool of 40+ members",
+      "Managed social media accounts and overall publicity of the organization"
+    ]
+  }
+];
+
+const logAndFin = [
+  {
+    role: "Financial Project Associate",
+    organization: "UP Junior Finance Association",
+    timeline: "2026 - Present",
+    bullets: [
+      "Co-led the execution of JFA's passive income-generating projects",
+      "Spearheaded the development of digital products as a passive source of evenue for the organization",
+      "Developed publicity materials for the promotion of income-generating projects"
+    ]
+  },
+  {
+    role: "Head of Treasury",
+    organization: "UP Mechanics",
+    timeline: "2026 - Present",
+    bullets: [
+      "Developed budget and inventory trackers for Mechanics's income-generating projects",
+      "Automated calculation and analysis of inventory to optimize restocking of products"
+    ]
+  },
+  {
+    role: "Financial Project Associate",
+    organization: "UP Junior Finance Association",
+    timeline: "2026 - Present",
+    bullets: [
+      "Spearheaded the development of budget and inventory trackers for AOT - Manila events",
+      "Managed canvassing and pricing for AOT - Manila's official merchandise line",
+      "Co-led the Finance Committee for event planning tasks"
+    ]
+  }
+];
+
+const educ = [
+  {
+    role: "BS Mechanical Engineering",
+    organization: "University of the Philippines - Diliman",
+    timeline: "August 2025 - Present",
+    bullets: [
+      "Oblation Scholar",
+      "DOST-SEI Merit Scholar"
+    ]
+  },
+  {
+    role: "Physics Core + Engineering and Technology Electives",
+    organization: "Philippine Science High School - Main Campus",
+    timeline: "August 2019 - May 2025",
+    bullets: [
+      "Graduated with High Honors",
+      "Awarded Excellence in English Journalism"
+    ]
+  }
+];
+---
+
+<BaseLayout title = "greywolffles's lore">
+	<link rel = "stylesheet" href = "../styles/experiencesstyle.css" />
+
+	<NavHeader />
+
+	<main style = "padding: 40px 20px;">
+		<section class = "experience-container">
+		
+		<h1 class = "main-title">Experience</h1>
+		<h2 class = "sub-title">Data and Development</h2>
+		<hr class = "divider" />
+
+		<div class = "experience-list">
+			{dataAndDev.map((item) => (
+			<div>
+				<h3 class = "role-header">
+				{item.role} <span class = "company-meta"> | {item.organization} ({item.timeline})</span>
+				</h3>
+				
+				<ul class = "highlights-list">
+				{item.bullets.map((bullet) => (
+					<li>{bullet}</li>
+				))}
+				</ul>
+			</div>
+			))}
+		</div>
+
+		<h2 class = "sub-title">Logistics and Finance</h2>
+		<hr class = "divider" />
+
+		<div class = "experience-list">
+			{logAndFin.map((item) => (
+			<div>
+				<h3 class = "role-header">
+				{item.role} <span class = "company-meta"> | {item.organization} ({item.timeline})</span>
+				</h3>
+				
+				<ul class = "highlights-list">
+				{item.bullets.map((bullet) => (
+					<li>{bullet}</li>
+				))}
+				</ul>
+			</div>
+			))}
+		</div>
+
+		<h2 class = "sub-title">Education</h2>
+		<hr class = "divider" />
+
+		<div class = "experience-list">
+			{educ.map((item) => (
+			<div>
+				<h3 class = "role-header">
+				{item.role} <span class = "company-meta"> | {item.organization} ({item.timeline})</span>
+				</h3>
+				
+				<ul class = "highlights-list">
+				{item.bullets.map((bullet) => (
+					<li>{bullet}</li>
+				))}
+				</ul>
+			</div>
+			))}
+		</div>
+
+		</section>
+	</main>
+
+	<NavFooter />
+</BaseLayout>

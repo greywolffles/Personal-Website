@@ -1,0 +1,69 @@
+body {
+	background-color: var(--color-cream);
+}
+
+.page-wrapper {
+	padding: 0px 20px 40px 20px;
+}
+
+.experience-container {
+	background-color: var(--color-green);
+	color: var(--color-cream); 
+	max-width: 1200px; 
+	margin: 40px auto; 
+	padding: 40px; 
+	border-radius: 12px;
+}
+
+.main-title {
+	color: var(--color-yellow);
+	font-weight: bold; 
+	font-size: 3.5rem; 
+	margin: 0 0 10px 0; 
+}
+
+.sub-title {
+	color: var(--color-yellow);
+	font-weight: bold; 
+	font-size: 2rem; 
+	margin: 0 0 15px 0; 
+	font-weight: normal;
+	margin-top: 20px;
+}
+
+.divider {
+	border: 0; 
+	border-top: 2px solid var(--color-yellow);
+	margin-bottom: 30px;
+}
+
+.experience-list {
+	display: flex; 
+	flex-direction: column; 
+	gap: 35px;
+}
+
+.role-header {
+	font-family: 'Helvetica Now Condensed', Arial, sans-serif;
+	font-size: 1.25rem; 
+	font-weight: bold; 
+	font-style: italic; 
+	margin: 0 0 10px 0; 
+	color: var(--color-cream);
+}
+
+.company-meta {
+	font-style: normal; 
+	color: var(--color-cream);
+}
+
+.highlights-list {
+	margin: 0; 
+	padding-left: 20px; 
+	line-height: 1.6;
+}
+
+.experience-list .highlights-list li {
+margin-bottom: 8px;
+color: var(--color-cream) !important;
+}

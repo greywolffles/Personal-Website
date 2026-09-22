@@ -14,34 +14,34 @@ const sortedPosts = allPosts.sort(
 ---
 
 <BaseLayout title = "greywolffles's globe">
-  <NavHeader />
+	<NavHeader />
 
-  <div class = "blog-wrapper">
-    <header class = "blog-hero">
-      <h1>Blog</h1>
-      <p>
-        I'm not in journalism anymore but I still want to write, so welcome to <br />
-        <strong>Article Writing II: Electric Boogaloo!</strong>
-      </p>
-    </header>
+	<div class = "blog-wrapper">
+		<header class = "blog-hero">
+		<h1>Blog</h1>
+		<p class = "blog-subtitle">
+			I'm not in journalism anymore but I still want to write, so welcome to <br />
+			<strong>Article Writing II: Electric Boogaloo!</strong>
+		</p>
+		</header>
+  
+		<main class = "posts-stack">
+		{sortedPosts.map((post: any) => (
+			<a href = {`/blog/${post.id}`} class = "blog-card-link">
+			<article class = "blog-card">
+				<h2>{post.data.title}</h2>
+				<p class="post-date">
+				Published on {new Date(post.data.pubDate).toLocaleDateString('en-US', {
+					year: 'numeric',
+					month: 'long',
+					day: 'numeric'
+				})}
+				</p>
+			</article>
+			</a>
+		))}
+		</main>
+	</div>
 
-    <main class = "posts-stack">
-      {sortedPosts.map((post: any) => (
-        <a href = {`/blog/${post.id}`} class = "blog-card-link">
-          <article class = "blog-card">
-            <h2>{post.data.title}</h2>
-            <p class="post-date">
-			Published on {new Date(post.data.pubDate).toLocaleDateString('en-US', {
-				year: 'numeric',
-				month: 'long',
-				day: 'numeric'
-			})}
-			</p>
-          </article>
-        </a>
-      ))}
-    </main>
-  </div>
-
-  <NavFooter />
+	<NavFooter />
 </BaseLayout>
