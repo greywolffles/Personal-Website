@@ -1,5 +1,5 @@
 ---
-title: "My First Blog Post"
+title: "My Second Blog Post"
 pubDate: 2026-09-22
 ---
 

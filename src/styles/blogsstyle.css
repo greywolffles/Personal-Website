@@ -12,7 +12,6 @@
 }
 
 .blog-hero h1 {
-  font-family: 'Georgia', serif;
   font-size: 3.5rem;
   font-weight: bold;
   color: var(--color-brown);
@@ -20,7 +19,7 @@
 }
 
 .blog-hero p {
-  font-family: Arial, sans-serif;
+  font-family: 'Helvetica Now Condensed', Arial, sans-serif;
   font-size: 1.1rem;
   color: var(--color-brown);
   margin: 0;
@@ -51,7 +50,6 @@
 }
 
 .blog-card h2 {
-  font-family: 'Georgia', serif;
   font-size: 2.2rem;
   color: var(--color-brown);
   margin: 0 0 8px 0;
@@ -59,10 +57,21 @@
 }
 
 .blog-card .post-date {
-  font-family: Arial, sans-serif;
+  font-family: 'Helvetica Now Condensed', Arial, sans-serif;
   font-style: italic;
   font-size: 1rem;
   color: var(--color-brown);
   opacity: 0.8;
   margin: 0;
+}
+
+.blog-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 70vh;
+}
+
+.posts-stack {
+  flex-grow: 1;
+  margin-bottom: 40px; 
 }
